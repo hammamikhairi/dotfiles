@@ -1,0 +1,67 @@
+theme = "gruvbox_dark_hard"
+
+[editor]
+line-number = "relative"
+auto-completion	 = true
+# cursorline = true
+# rulers = [100]
+color-modes = true
+
+[editor.statusline]
+left = ["mode", "spinner", "file-name"]
+right = [ "position-percentage", "position"]
+center = ["workspace-diagnostics"]
+mode.normal = "    "
+mode.insert = "ISRT"
+mode.select = "SLCT"
+separator = "hello there"
+
+[editor.whitespace.render]
+space = "all"
+tab = "none"
+newline = "none"
+
+[editor.whitespace.characters]
+space = "·"
+nbsp = "⍽"
+
+[editor.cursor-shape]
+insert = "block"
+normal = "block"
+select = "underline"
+
+[editor.auto-pairs]
+'(' = ')'
+'{' = '}'
+'[' = ']'
+'"' = '"'
+'`' = '`'
+
+[editor.indent-guides]
+render = true
+character = "┆"# Some characters that work well: "▏", "┆", "┊"
+skip-levels = 0
+
+[editor.file-picker]
+ignore = true
+
+[keys.normal]
+C-f = "file_picker"
+C-s = ":w"
+"ret" = "insert_mode"
+C-a = "goto_prev_diag"
+C-q =  "extend_line_below"
+
+[keys.insert]
+C-f = "file_picker"
+C-s = ":w"
+C-a = "goto_prev_diag"
+C-right = "goto_line_end"
+C-left = "goto_line_start"
+C-d = ["kill_to_line_start", "kill_to_line_end"]
+C-z = "undo"
+C-Z = "redo"
+A-down = ["extend_to_line_bounds", "delete_selection", "paste_after", "move_line_down"]
+A-up = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before", "move_line_up"]
+C-c = "keep_primary_selection"
+
